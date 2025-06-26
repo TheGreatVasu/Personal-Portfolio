@@ -1,7 +1,7 @@
+# root .gitignore
 node_modules/
 .env
 .DS_Store
-*.log
 build/
 dist/
-uploads/
+*.log
