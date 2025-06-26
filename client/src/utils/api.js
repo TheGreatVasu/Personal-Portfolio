@@ -6,18 +6,26 @@ export const sendContactForm = async (formData) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
+      credentials: 'omit' // Important for CORS
     });
 
-    const data = await response.json();
-    
     if (!response.ok) {
-      throw new Error(data.error || 'Failed to send message');
+      // Try to get error message from response
+      try {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send message');
+      } catch (e) {
+        throw new Error('Network error occurred. Please try again later.');
+      }
     }
 
+    const data = await response.json();
     return data;
   } catch (error) {
-    throw error;
+    console.error('Contact form error:', error);
+    throw new Error(error.message || 'Failed to send message. Please try again later.');
   }
 };
