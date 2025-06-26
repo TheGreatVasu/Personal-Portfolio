@@ -3,6 +3,14 @@
 /client/node_modules
 /server/node_modules
 
+# Cache directories
+.cache
+**/.cache
+**/cache
+client/.cache
+client/node_modules/.cache
+server/.cache
+
 # Production build
 /client/build
 /client/dist
@@ -38,3 +46,8 @@ Thumbs.db
 
 # Debug logs
 debug.log
+
+# Large files
+*.pack
+*.old
+*.tmp
