@@ -13,3 +13,17 @@ services:
         sync: false
       - key: CONTACT_EMAIL
         sync: false 
+
+  - type: static
+    name: portfolio-frontend
+    env: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: ./client/build
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html 
