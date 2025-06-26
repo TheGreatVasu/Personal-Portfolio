@@ -1,0 +1,183 @@
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.not-found-content {
+  text-align: center;
+  z-index: 1;
+  animation: fadeIn 1s ease-out;
+}
+
+.glitch-text {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-shadow: 2px 2px var(--primary);
+  position: relative;
+  animation: glitch 1s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--secondary);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--accent);
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.not-found-description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin: 2rem 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.not-found-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.grid-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+.gradient-sphere {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.1) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: float 10s ease-in-out infinite;
+  top: -20%;
+  right: -10%;
+}
+
+.gradient-sphere-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, rgba(139, 92, 246, 0.1) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: float 8s ease-in-out infinite reverse;
+  bottom: -10%;
+  left: -10%;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(44px, 450px, 56px, 0);
+  }
+  20% {
+    clip: rect(12px, 450px, 78px, 0);
+  }
+  40% {
+    clip: rect(86px, 450px, 98px, 0);
+  }
+  60% {
+    clip: rect(32px, 450px, 54px, 0);
+  }
+  80% {
+    clip: rect(64px, 450px, 76px, 0);
+  }
+  100% {
+    clip: rect(22px, 450px, 34px, 0);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@media (max-width: 768px) {
+  .glitch-text {
+    font-size: 3rem;
+  }
+
+  .not-found-description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .gradient-sphere,
+  .gradient-sphere-2 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glitch-text {
+    font-size: 2rem;
+  }
+
+  .gradient-sphere,
+  .gradient-sphere-2 {
+    width: 200px;
+    height: 200px;
+  }
+} 

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: portfolio-backend
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: CONTACT_EMAIL
+        sync: false 
