@@ -1,18 +1,16 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const contactRoutes = require('./routes/contactRoutes');
 
 const app = express();
 
 // Middleware
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://vasu-rastogi-portfolio.vercel.app',
-    'https://personal-portfolio-thegreatvasu.vercel.app'
-  ],
-  credentials: true
+  origin: process.env.NODE_ENV === 'production' 
+    ? process.env.CLIENT_URL 
+    : 'http://localhost:3000'
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
