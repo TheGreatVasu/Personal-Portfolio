@@ -90,12 +90,6 @@ I used **ChatGPT** and **YouTube tutorials** for troubleshooting and resolving d
 
 ---
 
-## 📝 License
-
-This project is created as part of a technical assignment and is intended for educational and professional demonstration purposes.
-
----
-
 ## 🙌 Acknowledgments
 
 - ChatGPT by OpenAI for deployment help
