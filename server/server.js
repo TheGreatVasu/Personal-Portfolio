@@ -9,11 +9,12 @@ const app = express();
 const corsOptions = {
   origin: [
     'http://localhost:3000',
-    'https://vasu-rastogi-portfolio.vercel.app', // Add your Vercel domain here
+    'https://personal-portfolio-virid-xi.vercel.app', // Your specific Vercel domain
     /\.vercel\.app$/ // Allow all subdomains of vercel.app
   ],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Accept'],
+  credentials: false,
   optionsSuccessStatus: 200
 };
 
