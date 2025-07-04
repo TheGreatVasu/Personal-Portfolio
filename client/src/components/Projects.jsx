@@ -13,7 +13,7 @@ const Projects = () => {
       image: "/assets/real-estate-chatbot.png",
       technologies: ["JavaScript", "React", "Node.js", "OpenAI API"],
       github: "https://github.com/TheGreatVasu/Real-Estate-Chatbot-",
-      live: "https://real-estate-chatbot.vercel.app",
+      live: "https://github.com/TheGreatVasu/Real-Estate-Chatbot-",
       category: "AI/ML"
     },
     {
@@ -22,16 +22,16 @@ const Projects = () => {
       image: "/assets/form-project.png",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
       github: "https://github.com/TheGreatVasu/form-project",
-      live: "https://form-project.vercel.app",
+      live: "https://form-project-ochre-gamma.vercel.app/",
       category: "Web App"
     },
     {
-      title: "Fashion E-commerce Platform",
+      title: "Kurtis Fashion E-commerce Platform",
       description: "A modern full-stack eCommerce platform for women's fashion with responsive UI. and Under Development",
       image: "/assets/ecommerce.png",
-      technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+      technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Node.js", "Express.js", "MongoDB" ],
       github: "https://github.com/TheGreatVasu/Ecommerce-Fashion-Platform",
-      live: "https://fashion-ecommerce.vercel.app",
+      live: "https://kurtis-ecommerce-2025.vercel.app/",
       category: "E-commerce"
     },
     {
@@ -40,7 +40,7 @@ const Projects = () => {
       image: "/assets/talent-form.png",
       technologies: ["TypeScript", "React", "Node.js", "PostgreSQL"],
       github: "https://github.com/TheGreatVasu/talent-acquisition-form",
-      live: "https://talent-form.vercel.app",
+      live: "https://talent-acquisition-form-8m5b.vercel.app/",
       category: "Web App"
     },
     {
@@ -49,7 +49,7 @@ const Projects = () => {
       image: "/assets/portfolio.png",
       technologies: ["React", "Node.js", "Express", "Nodemailer"],
       github: "https://github.com/TheGreatVasu/portfolio",
-      live: "https://vasurastogi.vercel.app",
+      live: "https://personal-portfolio-virid-xi.vercel.app/",
       category: "Website"
     },
     {
@@ -67,7 +67,7 @@ const Projects = () => {
       image: "/assets/process-monitoring.png",
       technologies: ["React", "Firebase", "Material-UI", "Node.js", "Express", "MongoDB"],
       github: "https://github.com/TheGreatVasu/process-monitoring",
-      live: "https://process-monitoring.vercel.app",
+      live: "",
       category: "Website"
     },
     {
