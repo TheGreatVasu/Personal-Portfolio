@@ -18,6 +18,10 @@
   pointer-events: none;
 }
 
+.contact-section, .contact-section * {
+  color: #fff !important;
+}
+
 .contact-container {
   position: relative;
   max-width: 1200px;

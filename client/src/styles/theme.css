@@ -1,37 +1,38 @@
 :root {
   /* Main Colors */
-  --color-primary: #6C63FF;
-  --color-primary-rgb: 108, 99, 255;
-  --color-secondary: #845EF7;
-  --color-secondary-rgb: 132, 94, 247;
-  --color-success: #40C057;
-  --color-success-rgb: 64, 192, 87;
+  --color-primary: #2563eb; /* Modern blue */
+  --color-primary-rgb: 37, 99, 235;
+  --color-secondary: #7c3aed; /* Modern purple */
+  --color-secondary-rgb: 124, 58, 237;
+  --color-success: #10b981; /* Modern teal/green */
+  --color-success-rgb: 16, 185, 129;
 
   /* Background Colors */
-  --color-bg: #0A0B14;
-  --color-bg-dark: #070812;
-  
+  --color-bg: #f8fafc; /* Light, clean background */
+  --color-bg-dark: #1e293b; /* Deep blue-gray for dark sections */
+
   /* Text Colors */
-  --color-text: #FFFFFF;
-  --color-text-light: rgba(255, 255, 255, 0.85);
-  
+  --color-text: #0f172a; /* Very dark blue for high contrast on light bg */
+  --color-text-light: #334155; /* Muted dark blue for secondary text on light bg */
+  --color-text-dark: #f1f5f9; /* Very light gray for text on dark bg */
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
+
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
-  
+
   /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-full: 9999px;
-  
+
   /* Spacing */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -39,7 +40,7 @@
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-2xl: 3rem;
-  
+
   /* Font Sizes */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -50,7 +51,7 @@
   --text-3xl: 2rem;
   --text-4xl: 2.5rem;
   --text-5xl: 3rem;
-  
+
   /* Font Weights */
   --font-light: 300;
   --font-normal: 400;
@@ -58,55 +59,52 @@
   --font-semibold: 600;
   --font-bold: 700;
   --font-extrabold: 800;
-  
+
   /* Color System */
   --color-bg-light: #1e293b;
   --color-bg-light: #1e293b;
-  
-  /* Primary Colors */
-  --color-primary-light: #818cf8;
-  --color-primary-dark: #4f46e5;
-  
-  /* Secondary Colors */
+
+  /* Primary Colors (light/dark variants) */
+  --color-primary-light: #60a5fa;
+  --color-primary-dark: #1e40af;
+
+  /* Secondary Colors (light/dark variants) */
   --color-secondary-light: #a78bfa;
-  --color-secondary-dark: #7c3aed;
-  
+  --color-secondary-dark: #6d28d9;
+
   /* Accent Colors */
-  --color-accent: #ec4899;
+  --color-accent: #ec4899; /* Vibrant pink */
   --color-accent-light: #f472b6;
   --color-accent-dark: #db2777;
-  
+
   /* Status Colors */
   --color-warning: #f59e0b;
   --color-error: #ef4444;
   --color-info: #3b82f6;
-  
-  /* Text Colors */
-  --color-text-dark: #e2e8f0;
-  
+
   /* Border Colors */
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-border-light: rgba(255, 255, 255, 0.05);
-  --color-border-dark: rgba(255, 255, 255, 0.2);
-  
+  --color-border: rgba(15, 23, 42, 0.1);
+  --color-border-light: rgba(15, 23, 42, 0.05);
+  --color-border-dark: rgba(15, 23, 42, 0.2);
+
   /* Shadow Effects */
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-  
+
   /* Gradient Effects */
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
   --gradient-dark: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg) 100%);
-  
+
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-mono: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
-  
+
   /* Font Weights */
   --font-thin: 100;
   --font-extralight: 200;
   --font-black: 900;
-  
+
   /* Line Heights */
   --leading-none: 1;
   --leading-tight: 1.25;
@@ -114,7 +112,7 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
   --leading-loose: 2;
-  
+
   /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -128,13 +126,13 @@
   --space-16: 4rem;
   --space-20: 5rem;
   --space-24: 6rem;
-  
+
   /* Border Radius */
   --radius-2xl: 1.5rem;
-  
+
   /* Transitions */
   --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  
+
   /* Z-index */
   --z-negative: -1;
   --z-elevate: 1;
@@ -143,19 +141,19 @@
   --z-modal: 300;
   --z-popover: 400;
   --z-maximum: 999;
-  
+
   /* Container Max Widths */
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
   --container-xl: 1280px;
-  
+
   /* Blur Effects */
   --blur-sm: blur(4px);
   --blur-md: blur(8px);
   --blur-lg: blur(16px);
   --blur-xl: blur(24px);
-  
+
   /* Animation Durations */
   --duration-fast: 150ms;
   --duration-normal: 300ms;

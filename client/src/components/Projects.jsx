@@ -115,63 +115,103 @@ const Projects = () => {
   };
 
   return (
-    <section className="projects">
-      <div className="projects-container">
-        <div className="projects-header">
-          <h2 className="section-title" data-aos="fade-up">{content[currentLang].title}</h2>
-          <h3 className="section-subtitle" data-aos="fade-up" data-aos-delay="100">{content[currentLang].subtitle}</h3>
-          <p className="section-description" data-aos="fade-up" data-aos-delay="200">{content[currentLang].description}</p>
-        </div>
-        
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div 
-              key={index}
-              className="project-card"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="project-image">
-                <img src={project.image} alt={project.title} />
-                <div className="project-overlay">
-                  <div className="project-links">
-                    <a 
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                      title={content[currentLang].viewProject}
-                    >
-                      <FaExternalLinkAlt />
-                    </a>
-                    <a 
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                      title={content[currentLang].viewCode}
-                    >
-                      <FaGithub />
-                    </a>
+    <>
+      <section className="projects">
+        <div className="projects-container">
+          <div className="projects-header">
+            <h2 className="section-title" data-aos="fade-up">{content[currentLang].title}</h2>
+            <h3 className="section-subtitle" data-aos="fade-up" data-aos-delay="100">{content[currentLang].subtitle}</h3>
+            <p className="section-description" data-aos="fade-up" data-aos-delay="200">{content[currentLang].description}</p>
+          </div>
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <div 
+                key={index}
+                className="project-card"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="project-image">
+                  <img src={project.image} alt={project.title} />
+                  <div className="project-overlay">
+                    <div className="project-links">
+                      <a 
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                        title={content[currentLang].viewProject}
+                      >
+                        <FaExternalLinkAlt />
+                      </a>
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                        title={content[currentLang].viewCode}
+                      >
+                        <FaGithub />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <div className="project-tech">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="tech-tag">{tech}</span>
-                  ))}
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
+                  <div className="project-tech">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span key={techIndex} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                  <span className="project-category">{project.category}</span>
                 </div>
-                <span className="project-category">{project.category}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Upcoming Projects Section */}
+      <section className="projects upcoming-projects">
+        <div className="projects-container">
+          <div className="projects-header">
+            <h2 className="section-title" data-aos="fade-up">Upcoming Projects</h2>
+            <p className="section-description" data-aos="fade-up" data-aos-delay="100">
+              Stay tuned for exciting new projects coming soon!
+            </p>
+          </div>
+          <div className="projects-grid">
+            {/* Upcoming Project 1 */}
+            <div className="project-card" data-aos="fade-up" data-aos-delay="200">
+              <div className="project-content">
+                <h3 className="project-title">Ecommerce Platform for Robotics</h3>
+                <p className="project-description">A next-gen ecommerce platform tailored for robotics products, featuring smart search, 3D previews, and seamless checkout. (Coming soon)</p>
+                <div className="project-tech">
+                  <span className="tech-tag">React</span>
+                  <span className="tech-tag">Node.js</span>
+                  <span className="tech-tag">3D</span>
+                  <span className="tech-tag">Ecommerce</span>
+                </div>
+                <span className="project-category">Robotics</span>
               </div>
             </div>
-          ))}
+            {/* Upcoming Project 2 */}
+            <div className="project-card" data-aos="fade-up" data-aos-delay="300">
+              <div className="project-content">
+                <h3 className="project-title">DSA Visualizer</h3>
+                <p className="project-description">A platform to visualize and interact with data structures and algorithms for better learning and understanding. (Coming soon)</p>
+                <div className="project-tech">
+                  <span className="tech-tag">DSA</span>
+                  <span className="tech-tag">Visualization</span>
+                  <span className="tech-tag">React</span>
+                </div>
+                <span className="project-category">Education</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

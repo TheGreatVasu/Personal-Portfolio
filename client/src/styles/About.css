@@ -168,7 +168,7 @@
 }
 
 .timeline-year {
-  color: var(--color-primary);
+  color: var(--color-text-light);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -242,6 +242,10 @@
   background: var(--color-primary);
   color: white;
   transform: translateY(-2px);
+}
+
+.about, .about * {
+  color: #fff !important;
 }
 
 /* Responsive Design */

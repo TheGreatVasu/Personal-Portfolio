@@ -62,10 +62,11 @@
 .name {
   font-size: 4.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff !important;
+  background: none !important;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
   margin: 0;
   opacity: 0;
   animation: fadeInUp 0.6s ease 0.2s forwards;
@@ -890,4 +891,148 @@
     animation: none;
     opacity: 0;
   }
+} 
+
+.hero, .hero * {
+  color: #fff !important;
+} 
+
+/* Feather Abstract Floating Icons */
+.code-icon {
+  font-size: 3.5rem;
+  color: #38bdf8;
+  opacity: 0.18;
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  animation: floatCode 18s linear infinite, moveCode 24s ease-in-out infinite;
+}
+.cloud-icon {
+  font-size: 4rem;
+  color: #a78bfa;
+  opacity: 0.15;
+  position: absolute;
+  top: 25%;
+  right: 12%;
+  animation: floatCloud 22s linear infinite, moveCloud 30s ease-in-out infinite;
+}
+.zap-icon {
+  font-size: 2.8rem;
+  color: #fbbf24;
+  opacity: 0.16;
+  position: absolute;
+  bottom: 18%;
+  left: 18%;
+  animation: floatZap 20s linear infinite, moveZap 28s ease-in-out infinite;
+}
+.cpu-icon {
+  font-size: 3.2rem;
+  color: #f472b6;
+  opacity: 0.14;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  animation: floatCPU 24s linear infinite, moveCPU 32s ease-in-out infinite;
+}
+.hexagon-icon {
+  font-size: 2.5rem;
+  color: #34d399;
+  opacity: 0.13;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: floatHexagon 26s linear infinite, moveHexagon 36s ease-in-out infinite;
+}
+.aperture-icon {
+  font-size: 3.8rem;
+  color: #818cf8;
+  opacity: 0.12;
+  position: absolute;
+  top: 60%;
+  right: 20%;
+  animation: floatAperture 28s linear infinite, moveAperture 34s ease-in-out infinite;
+}
+.activity-icon {
+  font-size: 2.7rem;
+  color: #f87171;
+  opacity: 0.15;
+  position: absolute;
+  bottom: 30%;
+  left: 60%;
+  animation: floatActivity 23s linear infinite, moveActivity 26s ease-in-out infinite;
+}
+
+@keyframes floatCode {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes floatCloud {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(25px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes floatZap {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.08); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes floatCPU {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(18px) scale(1.07); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes floatHexagon {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -60%) scale(1.12); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes floatAperture {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-22px) scale(1.09); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes floatActivity {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(12px) scale(1.06); }
+  100% { transform: translateY(0) scale(1); }
+} 
+
+@keyframes moveCode {
+  0% { left: 8%; }
+  50% { left: 15%; }
+  100% { left: 8%; }
+}
+@keyframes moveCloud {
+  0% { right: 12%; }
+  50% { right: 5%; }
+  100% { right: 12%; }
+}
+@keyframes moveZap {
+  0% { left: 18%; bottom: 18%; }
+  50% { left: 25%; bottom: 25%; }
+  100% { left: 18%; bottom: 18%; }
+}
+@keyframes moveCPU {
+  0% { right: 10%; bottom: 10%; }
+  50% { right: 18%; bottom: 18%; }
+  100% { right: 10%; bottom: 10%; }
+}
+@keyframes moveHexagon {
+  0% { top: 50%; left: 50%; }
+  25% { top: 55%; left: 45%; }
+  50% { top: 60%; left: 55%; }
+  75% { top: 45%; left: 55%; }
+  100% { top: 50%; left: 50%; }
+}
+@keyframes moveAperture {
+  0% { top: 60%; right: 20%; transform: rotate(0deg); }
+  50% { top: 65%; right: 10%; transform: rotate(180deg); }
+  100% { top: 60%; right: 20%; transform: rotate(360deg); }
+}
+@keyframes moveActivity {
+  0% { left: 60%; bottom: 30%; }
+  50% { left: 70%; bottom: 35%; }
+  100% { left: 60%; bottom: 30%; }
 } 

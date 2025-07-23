@@ -200,6 +200,10 @@
   transform: translateX(100%);
 }
 
+.services, .services * {
+  color: #fff !important;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .services-grid {

@@ -6,14 +6,16 @@
   z-index: 1000;
   transition: all 0.3s ease;
   padding: 1.5rem 0;
-  background: transparent;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
 }
 
 .navbar.scrolled {
-  background: rgba(10, 11, 20, 0.8);
-  backdrop-filter: blur(10px);
+  background: transparent !important;
+  backdrop-filter: none !important;
   padding: 1rem 0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: none !important;
 }
 
 .navbar-container {
@@ -34,10 +36,11 @@
 .brand-text {
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff !important;
+  background: none !important;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
 }
 
 .navbar-right {
@@ -52,7 +55,7 @@
 }
 
 .nav-link {
-  color: var(--color-text-light);
+  color: #fff !important;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -78,11 +81,11 @@
 }
 
 .nav-link:hover {
-  color: var(--color-text);
+  color: #fff !important;
 }
 
 .nav-link.active {
-  color: var(--color-text);
+  color: #fff !important;
 }
 
 .navbar-actions {
@@ -97,7 +100,7 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  color: white;
+  color: #fff !important;
   border: none;
   border-radius: 20px;
   cursor: pointer;

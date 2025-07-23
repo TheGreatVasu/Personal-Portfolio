@@ -296,7 +296,7 @@
 
 .tech-tag {
   font-size: 0.85rem;
-  color: var(--color-primary);
+  color: var(--color-text-light);
   background: rgba(var(--color-primary-rgb), 0.05);
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
@@ -333,6 +333,10 @@
 
 .project-card:hover .project-hover-effect {
   transform: translateX(100%);
+}
+
+.projects, .projects * {
+  color: #fff !important;
 }
 
 @media (max-width: 1024px) {

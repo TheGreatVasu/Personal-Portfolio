@@ -3,19 +3,14 @@ import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { IoRocketSharp } from 'react-icons/io5';
 import { 
-  SiReact, 
-  SiNodedotjs, 
-  SiJavascript, 
-  SiPython,
-  SiDocker,
-  SiMongodb,
-  SiPostgresql,
-  SiAmazonaws,
-  SiTailwindcss,
-  SiTypescript,
-  SiRedux,
-  SiGit
-} from 'react-icons/si';
+  FiCode, 
+  FiCloud, 
+  FiZap, 
+  FiCpu, 
+  FiHexagon, 
+  FiAperture, 
+  FiActivity 
+} from 'react-icons/fi';
 import { LanguageContext } from '../contexts/LanguageContext';
 import '../styles/Hero.css';
 
@@ -57,19 +52,13 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="floating-icons">
-        <IoRocketSharp className="floating-icon rocket-icon" />
-        <SiReact className="floating-icon react-icon" />
-        <SiNodedotjs className="floating-icon node-icon" />
-        <SiJavascript className="floating-icon js-icon" />
-        <SiPython className="floating-icon python-icon" />
-        <SiDocker className="floating-icon docker-icon" />
-        <SiMongodb className="floating-icon mongodb-icon" />
-        <SiPostgresql className="floating-icon postgresql-icon" />
-        <SiAmazonaws className="floating-icon aws-icon" />
-        <SiTailwindcss className="floating-icon tailwind-icon" />
-        <SiTypescript className="floating-icon typescript-icon" />
-        <SiRedux className="floating-icon redux-icon" />
-        <SiGit className="floating-icon git-icon" />
+        <FiCode className="floating-icon code-icon" />
+        <FiCloud className="floating-icon cloud-icon" />
+        <FiZap className="floating-icon zap-icon" />
+        <FiCpu className="floating-icon cpu-icon" />
+        <FiHexagon className="floating-icon hexagon-icon" />
+        <FiAperture className="floating-icon aperture-icon" />
+        <FiActivity className="floating-icon activity-icon" />
       </div>
       <div className="hero-content">
         <div className="hero-text">

@@ -17,8 +17,8 @@
 .glitch-text {
   font-size: 4rem;
   font-weight: 700;
-  color: var(--text-primary);
-  text-shadow: 2px 2px var(--primary);
+  color: var(--color-text);
+  text-shadow: 2px 2px var(--color-primary);
   position: relative;
   animation: glitch 1s infinite;
 }
@@ -49,7 +49,7 @@
 
 .not-found-description {
   font-size: 1.25rem;
-  color: var(--text-secondary);
+  color: var(--color-text-light);
   margin: 2rem 0;
   max-width: 500px;
   margin-left: auto;
