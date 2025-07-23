@@ -214,6 +214,11 @@
   transition: all 0.3s ease;
 }
 
+.navbar-links.active .nav-link {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
 @media (max-width: 1200px) {
   .navbar-container {
     padding: 0 2rem;
