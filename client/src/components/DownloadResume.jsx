@@ -1,23 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { FaDownload } from 'react-icons/fa';
-import { LanguageContext } from '../contexts/LanguageContext';
 import '../styles/DownloadResume.css';
 
 const DownloadResume = () => {
-  const { currentLang } = useContext(LanguageContext);
-
-  const content = {
-    en: {
-      buttonText: "Download Resume"
-    },
-    es: {
-      buttonText: "Descargar CV"
-    },
-    hi: {
-      buttonText: "रेज्यूमे डाउनलोड करें"
-    }
-  };
-
   const handleDownload = async () => {
     try {
       // The correct filename with space
@@ -58,10 +43,10 @@ const DownloadResume = () => {
     <button 
       className="download-resume-btn" 
       onClick={handleDownload}
-      aria-label={content[currentLang].buttonText}
+      aria-label="Download Resume"
     >
       <FaDownload className="download-icon" />
-      <span className="button-text">{content[currentLang].buttonText}</span>
+      <span className="button-text">Download Resume</span>
     </button>
   );
 };

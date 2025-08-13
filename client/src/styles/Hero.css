@@ -17,7 +17,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg) 100%);
+  background: var(--gradient-dark);
   z-index: 1;
 }
 
@@ -62,7 +62,7 @@
 .name {
   font-size: 4.5rem;
   font-weight: 800;
-  color: #fff !important;
+  color: var(--color-text-dark) !important;
   background: none !important;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
@@ -158,18 +158,19 @@
 .cta-primary {
   position: relative;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: var(--gradient-primary);
   color: white;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
   overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 
 .cta-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-xl);
 }
 
 .availability {
@@ -178,17 +179,18 @@
   gap: 0.75rem;
   color: var(--color-text-light);
   font-size: 0.95rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-full);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all var(--transition-normal);
 }
 
 .availability:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .pulse {
@@ -261,16 +263,19 @@
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--color-text-light);
   transition: all 0.3s ease;
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-link:hover {
-  background: rgba(var(--color-primary-rgb), 0.2);
+  background: var(--color-primary);
+  color: white;
   transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .scroll-indicator {

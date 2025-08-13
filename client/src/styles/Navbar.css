@@ -36,7 +36,7 @@
 .brand-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff !important;
+  color: var(--color-text-dark) !important;
   background: none !important;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
@@ -55,7 +55,7 @@
 }
 
 .nav-link {
-  color: #111 !important;
+  color: var(--color-text-dark) !important;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -81,11 +81,11 @@
 }
 
 .nav-link:hover {
-  color: #fff !important;
+  color: var(--color-primary) !important;
 }
 
 .nav-link.active {
-  color: #fff !important;
+  color: var(--color-primary) !important;
 }
 
 .navbar-actions {

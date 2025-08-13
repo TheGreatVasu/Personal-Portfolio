@@ -1,41 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaDownload } from 'react-icons/fa';
-import { LanguageContext } from '../contexts/LanguageContext';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { currentLang } = useContext(LanguageContext);
   const location = useLocation();
-
-  const content = {
-    en: {
-      home: "Home",
-      about: "About",
-      services: "Services",
-      projects: "Projects",
-      contact: "Contact",
-      resume: "Resume"
-    },
-    es: {
-      home: "Inicio",
-      about: "Sobre mí",
-      services: "Servicios",
-      projects: "Proyectos",
-      contact: "Contacto",
-      resume: "CV"
-    },
-    hi: {
-      home: "होम",
-      about: "परिचय",
-      services: "सेवाएं",
-      projects: "परियोजनाएं",
-      contact: "संपर्क",
-      resume: "रेज्यूमे"
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,8 +35,6 @@ const Navbar = () => {
     closeMobileMenu();
   };
 
-  const text = content[currentLang];
-
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="navbar-container">
@@ -80,35 +49,35 @@ const Navbar = () => {
               className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
-              {text.home}
+              Home
             </Link>
             <Link 
               to="/about" 
               className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
-              {text.about}
+              About
             </Link>
             <Link 
               to="/services" 
               className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
-              {text.services}
+              Services
             </Link>
             <Link 
               to="/projects" 
               className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
-              {text.projects}
+              Projects
             </Link>
             <Link 
               to="/contact" 
               className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
-              {text.contact}
+              Contact
             </Link>
           </div>
 
@@ -116,10 +85,10 @@ const Navbar = () => {
             <button 
               className="resume-download-btn" 
               onClick={handleDownload}
-              aria-label={`Download ${text.resume}`}
+              aria-label="Download Resume"
             >
               <FaDownload className="download-icon" />
-              <span>{text.resume}</span>
+              <span>Resume</span>
             </button>
 
             <button 

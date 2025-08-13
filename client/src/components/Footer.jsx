@@ -37,10 +37,12 @@ const Footer = () => {
           <div className="footer-section">
             <h4 className="footer-title">Services</h4>
             <div className="footer-links">
-              <Link to="/services" className="footer-link">Web Development</Link>
-              <Link to="/services" className="footer-link">Mobile Development</Link>
-              <Link to="/services" className="footer-link">UI/UX Design</Link>
-              <Link to="/services" className="footer-link">Tech Consulting</Link>
+              <Link to="/services" className="footer-link">Website Development</Link>
+              <Link to="/services" className="footer-link">Software Development</Link>
+              <Link to="/services" className="footer-link">AI Integration</Link>
+              <Link to="/services" className="footer-link">Technical Support</Link>
+              <Link to="/services" className="footer-link">Hosting and Deployment</Link>
+              <Link to="/services" className="footer-link">Maintenance and Updates</Link>
             </div>
           </div>
         </div>
