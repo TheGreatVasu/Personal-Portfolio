@@ -7,11 +7,13 @@ import ServicesPage from './pages/Services';
 import ProjectsPage from './pages/Projects';
 import ContactPage from './pages/Contact';
 import NotFound from './pages/NotFound';
+import ScrollToTop from './components/ScrollToTop';
 import './styles/theme.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <Navbar />
         <Routes>
