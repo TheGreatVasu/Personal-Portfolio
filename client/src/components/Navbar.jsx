@@ -27,8 +27,8 @@ const Navbar = () => {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/assets/Vasu-Rastogi-Resume.docx';
-    link.download = 'Vasu-Rastogi-Resume.docx';
+    link.href = '/assets/Vasu_Rastogi_Resume.pdf';
+    link.download = 'Vasu_Rastogi_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

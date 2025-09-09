@@ -25,7 +25,7 @@ const About = () => {
       items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase"]
     },
     cloud: {
-      title: "Cloud Services Exploring",
+      title: "Cloud Services",
       icon: <FaCloud />,
       items: ["AWS", "Google Cloud", "Azure", "DevOps", "Docker", "CI/CD"]
     },
@@ -51,23 +51,28 @@ const About = () => {
       description: "Pursuing B.Tech in Computer Science and Engineering the Lovely Professional University, Punjab, India."
     },
     {
-      year: "2024 - 2025",
-      role: "Freelance Full Stack Web Developer",
+      year: "2024 - Present",
+      role: "Full Stack Developer",
       company: "Rastogi & Associates",
       description: "Worked on Full Stack Web Development Project for a client.",
-      link: "https://rastogiassociates.com/"
     },
     {
       year: "2025 - Present",
-      role: "Full Stack Web Developer",
-      company: "Aniyah",
+      role: "Full Stack Engineer",
+      company: "Databot-labs",
       description: "Working with a Brand to develop their visibile presence on the web."
     },
     {
+      year: "2023 - Present",
+      role: "Self-Employed ",
+      company: "Rastogi Coders",
+      description: "Working as a Self-Employed Full Stack Developer and solving complex problems with seamless, user-first full stack innovation end-to-end."
+    },
+    {
       year: "2025 - Present",
-      role: "Available For New Oppurnities",
-      company: "Open to New Opportunities",
-      description: "I am open to new opportunities and always looking for new challenges."
+      role: "Working With Companies as an Backend Engineer",
+      company: "Development Startup Teams",
+      description: "Working with companies to develop their scalable Software and Backend systems."
     }
   ];
 
