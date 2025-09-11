@@ -8,6 +8,8 @@ const ContactForm = () => {
     name: '',
     email: '',
     phone: '',
+    date: '', // Booking date
+    bookingType: '', // Booking type
     message: ''
   });
 
@@ -48,7 +50,7 @@ const ContactForm = () => {
       });
 
       // Clear form on success
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', date: '', bookingType: '', message: '' });
       
     } catch (error) {
       setStatus({
@@ -131,6 +133,7 @@ const ContactForm = () => {
 
             <div className="form-group">
               <input
+                id="contact-name"
                 type="text"
                 className="form-control"
                 name="name"
@@ -139,12 +142,14 @@ const ContactForm = () => {
                 placeholder=" "
                 required
                 disabled={status.submitting}
+                aria-required="true"
               />
-              <label className="form-label">Your Name</label>
+              <label className="form-label" htmlFor="contact-name">Your Name</label>
             </div>
 
             <div className="form-group">
               <input
+                id="contact-email"
                 type="email"
                 className="form-control"
                 name="email"
@@ -153,25 +158,65 @@ const ContactForm = () => {
                 placeholder=" "
                 required
                 disabled={status.submitting}
+                aria-required="true"
               />
-              <label className="form-label">Email Address</label>
+              <label className="form-label" htmlFor="contact-email">Email Address</label>
             </div>
 
             <div className="form-group">
               <input
+                id="contact-phone"
                 type="tel"
                 className="form-control"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder=" "
+                required
                 disabled={status.submitting}
+                aria-required="true"
               />
-              <label className="form-label">Phone Number (Optional)</label>
+              <label className="form-label" htmlFor="contact-phone">Phone Number</label>
+            </div>
+
+            <div className="form-group">
+              <input
+                id="contact-date"
+                type="date"
+                className="form-control"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                placeholder=" "
+                required
+                disabled={status.submitting}
+                aria-required="true"
+              />
+              <label className="form-label" htmlFor="contact-date">Booking Date</label>
+            </div>
+
+            <div className="form-group">
+              <select
+                id="contact-bookingType"
+                className="form-control"
+                name="bookingType"
+                value={formData.bookingType}
+                onChange={handleChange}
+                required
+                disabled={status.submitting}
+                aria-required="true"
+              >
+                <option value="">Select Booking Type</option>
+                <option value="Meeting">Meeting</option>
+                <option value="Consultation">Consultation</option>
+                <option value="Project Discussion">Project Discussion</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
 
             <div className="form-group">
               <textarea
+                id="contact-message"
                 className="form-control"
                 name="message"
                 value={formData.message}
@@ -179,8 +224,9 @@ const ContactForm = () => {
                 placeholder=" "
                 required
                 disabled={status.submitting}
+                aria-required="true"
               />
-              <label className="form-label">Your Message</label>
+              <label className="form-label" htmlFor="contact-message">Your Message</label>
             </div>
 
             <button 

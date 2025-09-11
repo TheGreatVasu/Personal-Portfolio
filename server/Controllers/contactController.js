@@ -2,20 +2,24 @@ const transporter = require('../config/mailConfig');
 
 const sendContactEmail = async (req, res) => {
   try {
-    const { name, email, phone, message } = req.body;
+    const { name, email, phone, date, bookingType, message } = req.body;
 
     // Email to the website owner
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.CONTACT_EMAIL, // Your email where you want to receive messages
-      subject: `New Contact Form Message from ${name}`,
+      to: 'vasurastogi213@gmail.com', // Custom email receiver
+      subject: `New Contact Form Message from ${name} - ${bookingType || 'General Inquiry'}`,
       html: `
         <h3>New Contact Form Submission</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+        <p><strong>Phone:</strong> ${phone}</p>
+        ${date ? `<p><strong>Booking Date:</strong> ${new Date(date).toLocaleDateString()}</p>` : ''}
+        ${bookingType ? `<p><strong>Booking Type:</strong> ${bookingType}</p>` : ''}
         <p><strong>Message:</strong></p>
         <p>${message}</p>
+        <hr>
+        <p><small>Sent from your portfolio website contact form</small></p>
       `
     };
 
@@ -26,12 +30,25 @@ const sendContactEmail = async (req, res) => {
     const autoReplyOptions = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Thank you for contacting me!',
+      subject: 'Thank you for contacting Vasu Rastogi - CEO @Rastogi Coders',
       html: `
-        <h3>Thank you for reaching out!</h3>
-        <p>Dear ${name},</p>
-        <p>I have received your message and will get back to you as soon as possible.</p>
-        <p>Best regards,<br>Vasu Rastogi</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h3 style="color: #0a0a0f;">Thank you for reaching out!</h3>
+          <p>Dear ${name},</p>
+          <p>I have received your message and will get back to you as soon as possible.</p>
+          ${date && bookingType ? `
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 20px 0;">
+              <h4 style="color: #0a0a0f; margin: 0 0 10px 0;">Your Booking Details:</h4>
+              <p style="margin: 5px 0;"><strong>Date:</strong> ${new Date(date).toLocaleDateString()}</p>
+              <p style="margin: 5px 0;"><strong>Type:</strong> ${bookingType}</p>
+            </div>
+          ` : ''}
+          <p>Best regards,<br><strong>Vasu Rastogi</strong><br>CEO @Rastogi Coders<br>Software Engineer</p>
+          <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+          <p style="font-size: 12px; color: #666;">
+            This is an automated response. Please do not reply to this email.
+          </p>
+        </div>
       `
     };
 

@@ -38,7 +38,11 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-brand">
+        <Link 
+          to="/" 
+          className="navbar-brand"
+          onClick={() => window.scrollTo(0, 0)}
+        >
           <span className="brand-text">Rastogi's Portfolio</span>
         </Link>
 
@@ -66,11 +70,32 @@ const Navbar = () => {
               Services
             </Link>
             <Link 
+              to="/tech-stack" 
+              className={`nav-link ${location.pathname === '/tech-stack' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Tech Stack
+            </Link>
+            <Link 
               to="/projects" 
               className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
               Projects
+            </Link>
+            <Link 
+              to="/upcoming" 
+              className={`nav-link ${location.pathname === '/upcoming' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Upcoming
+            </Link>
+            <Link 
+              to="/subscription" 
+              className={`nav-link ${location.pathname === '/subscription' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Subscription
             </Link>
             <Link 
               to="/contact" 

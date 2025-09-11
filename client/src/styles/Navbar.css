@@ -12,10 +12,11 @@
 }
 
 .navbar.scrolled {
-  background: transparent !important;
-  backdrop-filter: none !important;
+  background: var(--white-shade-1) !important;
+  backdrop-filter: blur(15px) !important;
   padding: 1rem 0;
-  box-shadow: none !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--white-shade-2) !important;
+  border-bottom: 1px solid var(--white-shade-3);
 }
 
 .navbar-container {
@@ -24,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .navbar-brand {
@@ -36,7 +38,7 @@
 .brand-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-text-dark) !important;
+  color: var(--color-text) !important;
   background: none !important;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
@@ -52,10 +54,13 @@
 .navbar-links {
   display: flex;
   gap: 3rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-link {
-  color: var(--color-text-dark) !important;
+  color: var(--color-text) !important;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -98,15 +103,17 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  color: #fff !important;
+  padding: 0.6rem 1.1rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+  color: var(--color-text) !important;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.22);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 .resume-download-btn:hover {
@@ -215,7 +222,7 @@
 }
 
 .navbar-links.active .nav-link {
-  color: #111 !important;
+  color: var(--color-text) !important;
   opacity: 1 !important;
 }
 
@@ -247,6 +254,8 @@
     gap: 2rem;
     transition: all 0.3s ease;
     z-index: -1;
+    left: auto;
+    transform: none;
   }
 
   .navbar-links.active {

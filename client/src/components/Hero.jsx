@@ -30,20 +30,21 @@ const Hero = () => {
           <div className="greeting">
             <span className="greeting-text">Hello, I'm</span>
             <div className="name-wrapper">
-              <h1 className="name">Vasu Rastogi</h1>
+              <h1 className="name">Vasu Rastogi <span className="role-short">A Software Engineer</span></h1>
               <div className="name-bg"></div>
             </div>
           </div>
           
           <div className="title">
             <h2 className="title-text">
-              Software and Full Stack Developer
+              CEO @Rastogi Coders
               <span className="title-decoration"></span>
             </h2>
           </div>
 
           <p className="description">
-          Building scalable, beautiful applications and solving complex problems with seamless, user-first full stack innovation end-to-end. </p>
+          Building Own Empire From Scratch. I design and develop software that reflects your brand's personality — no generic templates, only unique solutions.
+          </p>
 
           <div className="skills-cloud">
             <span className="skill-tag" style={{ animationDelay: '0.8s' }}>React</span>

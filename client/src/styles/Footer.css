@@ -1,6 +1,6 @@
 .footer {
   position: relative;
-  background: var(--gradient-dark);
+  background: var(--color-bg-dark);
   padding: 2.5rem 0 1.5rem;
   overflow: hidden;
 }
@@ -67,12 +67,13 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--white-shade-1);
+  border: 1px solid var(--white-shade-3);
   border-radius: 8px;
-  color: var(--color-text-dark);
+  color: var(--color-text);
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .social-link:hover {

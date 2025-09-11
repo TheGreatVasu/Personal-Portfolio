@@ -4,9 +4,12 @@ import 'aos/dist/aos.css';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import About from '../components/About';
+import TechStack from '../components/TechStack';
 import Projects from '../components/Projects';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
+import UpcomingProject from '../components/UpcomingProject';
+import SubscriptionModel from '../components/SubscriptionModel';
 
 const Home = () => {
   useEffect(() => {
@@ -30,7 +33,10 @@ const Home = () => {
       <Hero />
       <Services />
       <About />
+      <TechStack />
       <Projects />
+      <UpcomingProject />
+      <SubscriptionModel />
       <ContactForm />
       <Footer />
     </main>

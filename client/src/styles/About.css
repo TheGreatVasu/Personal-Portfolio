@@ -1,6 +1,6 @@
 .about {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-dark) 100%);
+  background: var(--color-bg);
   position: relative;
   overflow: hidden;
 }
@@ -58,13 +58,14 @@
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background: var(--white-shade-2);
+  backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 2rem;
   text-align: center;
   transition: transform 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--white-shade-3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--white-shade-1);
 }
 
 .stat-card:hover {
@@ -74,9 +75,7 @@
 .stat-number {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
 }
 
@@ -111,12 +110,7 @@
   transform: translateX(-50%);
   width: 2px;
   height: 100%;
-  background: linear-gradient(to bottom, 
-    transparent,
-    var(--color-primary),
-    var(--color-secondary),
-    transparent
-  );
+  background: linear-gradient(to bottom, transparent, var(--white-shade-3), transparent);
 }
 
 .timeline-item {
@@ -155,12 +149,13 @@
 }
 
 .timeline-content {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background: var(--white-shade-2);
+  backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--white-shade-3);
   transition: transform 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--white-shade-1);
 }
 
 .timeline-content:hover {
@@ -198,17 +193,19 @@
 }
 
 .skill-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background: var(--white-shade-2);
+  backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--white-shade-3);
   transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--white-shade-1);
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--white-shade-3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--white-shade-2);
 }
 
 .skill-icon {
@@ -245,7 +242,7 @@
 }
 
 .about, .about * {
-  color: #fff !important;
+  color: var(--color-text) !important;
 }
 
 /* Responsive Design */
