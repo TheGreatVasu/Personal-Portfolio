@@ -2,6 +2,7 @@ const transporter = require('../config/mailConfig');
 
 const sendContactEmail = async (req, res) => {
   try {
+    console.log('Contact form submission received:', req.body);
     const { name, email, phone, date, bookingType, message } = req.body;
 
     // Email to the website owner
@@ -23,8 +24,19 @@ const sendContactEmail = async (req, res) => {
       `
     };
 
+    // Verify email configuration
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error('Email configuration missing');
+      return res.status(500).json({ 
+        success: false, 
+        error: 'Email service not configured. Please contact the administrator.' 
+      });
+    }
+
     // Send email
+    console.log('Sending email to:', mailOptions.to);
     await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully');
 
     // Auto-reply to the sender
     const autoReplyOptions = {
@@ -52,7 +64,15 @@ const sendContactEmail = async (req, res) => {
       `
     };
 
-    await transporter.sendMail(autoReplyOptions);
+    // Send auto-reply
+    try {
+      console.log('Sending auto-reply to:', email);
+      await transporter.sendMail(autoReplyOptions);
+      console.log('Auto-reply sent successfully');
+    } catch (autoReplyError) {
+      console.error('Auto-reply failed:', autoReplyError);
+      // Don't fail the main request if auto-reply fails
+    }
 
     res.status(200).json({ 
       success: true, 

@@ -2,6 +2,9 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://personal-portfoli
 
 export const sendContactForm = async (formData) => {
   try {
+    console.log('Sending contact form data:', formData);
+    console.log('API URL:', `${API_BASE_URL}/contact/send`);
+    
     const response = await fetch(`${API_BASE_URL}/contact/send`, {
       method: 'POST',
       headers: {
@@ -12,20 +15,29 @@ export const sendContactForm = async (formData) => {
       credentials: 'omit' // Important for CORS
     });
 
+    console.log('Response status:', response.status);
+    console.log('Response headers:', response.headers);
+
     if (!response.ok) {
       // Try to get error message from response
       try {
         const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to send message');
+        console.error('Error response data:', errorData);
+        throw new Error(errorData.error || `Server error: ${response.status}`);
       } catch (e) {
-        throw new Error('Network error occurred. Please try again later.');
+        console.error('Failed to parse error response:', e);
+        throw new Error(`Network error occurred (${response.status}). Please try again later.`);
       }
     }
 
     const data = await response.json();
+    console.log('Success response data:', data);
     return data;
   } catch (error) {
     console.error('Contact form error:', error);
+    if (error.name === 'TypeError' && error.message.includes('fetch')) {
+      throw new Error('Unable to connect to server. Please check your internet connection and try again.');
+    }
     throw new Error(error.message || 'Failed to send message. Please try again later.');
   }
 };

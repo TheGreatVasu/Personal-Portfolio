@@ -40,12 +40,24 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus({ submitting: true, success: null, error: null });
 
+    // Basic client-side validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || 
+        !formData.date || !formData.bookingType || !formData.message.trim()) {
+      setStatus({
+        submitting: false,
+        success: null,
+        error: 'Please fill in all required fields.'
+      });
+      return;
+    }
+
     try {
+      console.log('Submitting form with data:', formData);
       const result = await sendContactForm(formData);
       
       setStatus({
         submitting: false,
-        success: result.message,
+        success: result.message || 'Your message has been sent successfully! I will get back to you soon.',
         error: null
       });
 
@@ -53,6 +65,7 @@ const ContactForm = () => {
       setFormData({ name: '', email: '', phone: '', date: '', bookingType: '', message: '' });
       
     } catch (error) {
+      console.error('Form submission error:', error);
       setStatus({
         submitting: false,
         success: null,

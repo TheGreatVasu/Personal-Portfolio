@@ -9,19 +9,26 @@ const app = express();
 const corsOptions = {
   origin: [
     'http://localhost:3000',
+    'http://localhost:3001',
     'https://personal-portfolio-virid-xi.vercel.app', // Your specific Vercel domain
     /\.vercel\.app$/ // Allow all subdomains of vercel.app
   ],
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Accept'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Accept', 'Authorization'],
   credentials: false,
   optionsSuccessStatus: 200
 };
 
 // Middleware
 app.use(cors(corsOptions));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Request logging middleware
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+  next();
+});
 
 // Health check endpoint
 app.get('/health', (req, res) => {
