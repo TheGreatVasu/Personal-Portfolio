@@ -1,4 +1,4 @@
-const transporter = require('../config/mailConfig');
+const transporter = require('../config/emailService');
 
 const sendContactEmail = async (req, res) => {
   try {
@@ -80,10 +80,26 @@ const sendContactEmail = async (req, res) => {
     });
   } catch (error) {
     console.error('Contact form error:', error);
-    res.status(500).json({ 
-      success: false, 
-      error: 'Failed to send message. Please try again later.' 
-    });
+    
+    // Handle specific email authentication errors
+    if (error.code === 'EAUTH') {
+      console.error('Email authentication failed. Please check email credentials.');
+      res.status(500).json({ 
+        success: false, 
+        error: 'Email service configuration error. Please contact the administrator.' 
+      });
+    } else if (error.code === 'ECONNECTION') {
+      console.error('Email connection failed.');
+      res.status(500).json({ 
+        success: false, 
+        error: 'Unable to connect to email service. Please try again later.' 
+      });
+    } else {
+      res.status(500).json({ 
+        success: false, 
+        error: 'Failed to send message. Please try again later.' 
+      });
+    }
   }
 };
 
