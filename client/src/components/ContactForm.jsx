@@ -51,6 +51,28 @@ const ContactForm = () => {
       return;
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus({
+        submitting: false,
+        success: null,
+        error: 'Please enter a valid email address.'
+      });
+      return;
+    }
+
+    // Validate phone format (basic)
+    const phoneRegex = /^[\+]?[1-9][\d\s\-\(\)]{7,15}$/;
+    if (!phoneRegex.test(formData.phone.replace(/[\s\-\(\)]/g, ''))) {
+      setStatus({
+        submitting: false,
+        success: null,
+        error: 'Please enter a valid phone number.'
+      });
+      return;
+    }
+
     try {
       console.log('Submitting form with data:', formData);
       const result = await sendContactForm(formData);
