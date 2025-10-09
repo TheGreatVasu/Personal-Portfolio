@@ -8,7 +8,7 @@ const sendContactEmail = async (req, res) => {
     // Email to the website owner
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'vasurastogi213@gmail.com', // Custom email receiver
+      to: process.env.CONTACT_EMAIL || process.env.EMAIL_USER,
       subject: `New Contact Form Message from ${name} - ${bookingType || 'General Inquiry'}`,
       html: `
         <h3>New Contact Form Submission</h3>

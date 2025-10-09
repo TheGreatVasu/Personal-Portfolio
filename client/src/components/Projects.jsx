@@ -14,12 +14,12 @@ const Projects = () => {
       category: "Website"
     },
     {
-      title: "Multi-step Profile Form",
-      description: "A MERN stack multi-step profile form with user input validation and MongoDB integration.",
+      title: "YD Advisory Website",
+      description: "A website for YD Advisory, a consulting firm, featuring smart search, Consulting Services, and seamless checkout.",
       image: "/assets/form-project.png",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
       github: "https://github.com/TheGreatVasu/form-project",
-      live: "https://form-project-ochre-gamma.vercel.app/",
+      live: "https://ydadvisory.ae/",
       category: "Web App"
     },
     {
@@ -65,10 +65,11 @@ const Projects = () => {
     <section className="projects">
       <div className="projects-container">
         <div className="projects-header">
-          <h2 className="section-title" data-aos="fade-up">My Work</h2>
-          <h3 className="section-subtitle" data-aos="fade-up" data-aos-delay="100">Showcase of Skills & Projects</h3>
+          <h2 className="section-title" data-aos="fade-up">Projects</h2>
+          <h3 className="section-subtitle" data-aos="fade-up" data-aos-delay="100">Real work, shipped to production</h3>
           <p className="section-description" data-aos="fade-up" data-aos-delay="200">
-            A collection of projects that demonstrate my expertise in web development, AI/ML, and software engineering.
+            Selected builds spanning product sites, full‑stack apps and e‑commerce. Each card links to
+            production and source.
           </p>
         </div>
         <div className="projects-grid">

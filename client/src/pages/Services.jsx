@@ -17,12 +17,6 @@ const ServicesPage = () => {
 
   return (
     <main className="services-page">
-      <div className="page-background">
-        <div className="noise-overlay"></div>
-        <div className="gradient-overlay"></div>
-        <div className="grid-overlay"></div>
-      </div>
-      
       <Services />
       <Footer />
     </main>

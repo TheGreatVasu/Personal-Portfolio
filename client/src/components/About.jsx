@@ -81,9 +81,11 @@ const About = () => {
       <div className="about-container">
         <div className="about-header" data-aos="fade-up">
           <h2 className="section-title">About Me</h2>
-          <h3 className="section-subtitle">Passionate Full Stack Developer & Problem Solver</h3>
+          <h3 className="section-subtitle">Building reliable systems with a user‑first mindset</h3>
           <p className="bio">
-            With over 2 years of experience in web development, I specialize in creating scalable and efficient solutions that drive business growth. My approach combines technical expertise with creative problem-solving to deliver exceptional digital experiences.
+            I’m a full‑stack engineer focused on crafting fast, accessible products. I combine modern
+            frontend with solid backend architectures to ship features confidently and keep them
+            maintainable over time.
           </p>
         </div>
 
@@ -97,7 +99,7 @@ const About = () => {
         </div>
 
         <div className="experience-section" data-aos="fade-up" data-aos-delay="300">
-          <h3 className="experience-title">Professional Journey</h3>
+          <h3 className="experience-title">Journey</h3>
           <div className="timeline">
             {timeline.map((item, index) => (
               <div key={index} className="timeline-item" data-aos="fade-up" data-aos-delay={400 + index * 100}>

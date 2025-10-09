@@ -13,14 +13,16 @@ const createEmailTransporter = () => {
         host: 'smtp.gmail.com',
         port: 587,
         secure: false,
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS
-        },
         tls: {
           rejectUnauthorized: false
         }
       };
+      if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+        transporterConfig.auth = {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS
+        };
+      }
       break;
 
     case 'sendgrid':
@@ -64,14 +66,16 @@ const createEmailTransporter = () => {
         host: 'smtp.gmail.com',
         port: 587,
         secure: false,
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS
-        },
         tls: {
           rejectUnauthorized: false
         }
       };
+      if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+        transporterConfig.auth = {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS
+        };
+      }
   }
 
   return nodemailer.createTransport(transporterConfig);
@@ -81,14 +85,18 @@ const createEmailTransporter = () => {
 const transporter = createEmailTransporter();
 
 // Verify connection configuration
-transporter.verify((error, success) => {
-  if (error) {
-    console.error('Email configuration error:', error);
-    console.error('Please check your email service configuration and credentials');
-  } else {
-    console.log('Email server is ready to take our messages');
-    console.log(`Using email service: ${process.env.EMAIL_SERVICE || 'gmail'}`);
-  }
-});
+if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+  transporter.verify((error, success) => {
+    if (error) {
+      console.error('Email configuration error:', error);
+      console.error('Please check your email service configuration and credentials');
+    } else {
+      console.log('Email server is ready to take our messages');
+      console.log(`Using email service: ${process.env.EMAIL_SERVICE || 'gmail'}`);
+    }
+  });
+} else {
+  console.warn('Email credentials not set. Skipping SMTP verification. Set EMAIL_USER and EMAIL_PASS to enable email sending.');
+}
 
 module.exports = transporter;

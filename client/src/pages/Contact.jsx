@@ -17,12 +17,6 @@ const ContactPage = () => {
 
   return (
     <main className="contact-page">
-      <div className="page-background">
-        <div className="noise-overlay"></div>
-        <div className="gradient-overlay"></div>
-        <div className="grid-overlay"></div>
-      </div>
-      
       <ContactForm />
       <Footer />
     </main>

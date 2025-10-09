@@ -17,12 +17,6 @@ const AboutPage = () => {
 
   return (
     <main className="about-page">
-      <div className="page-background">
-        <div className="noise-overlay"></div>
-        <div className="gradient-overlay"></div>
-        <div className="grid-overlay"></div>
-      </div>
-      
       <About />
       <Footer />
     </main>

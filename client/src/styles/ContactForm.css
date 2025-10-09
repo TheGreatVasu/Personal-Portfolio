@@ -1,22 +1,13 @@
 .contact-section {
   position: relative;
   padding: 6rem 0;
-  background: var(--color-bg);
+  background: transparent;
   min-height: auto;
   overflow: hidden;
 }
 
-.contact-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50% 50%, var(--color-primary) 0%, transparent 70%);
-  opacity: 0.05;
-  pointer-events: none;
-}
+/* Remove old background glow; global video is used */
+.contact-section::before { display: none; }
 
 .contact-section, .contact-section * {
   color: var(--color-text) !important;
@@ -78,11 +69,11 @@
 
 .contact-info {
   padding: 2rem;
-  background: var(--white-shade-2);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(15px);
-  border: 1px solid var(--white-shade-3);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--white-shade-1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255,255,255,0.06);
 }
 
 .info-title {
@@ -186,11 +177,11 @@
 
 .contact-form {
   padding: 2rem;
-  background: var(--white-shade-2);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(15px);
-  border: 1px solid var(--white-shade-3);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--white-shade-1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255,255,255,0.06);
 }
 
 .form-group {

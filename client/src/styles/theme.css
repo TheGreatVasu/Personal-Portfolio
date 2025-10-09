@@ -193,6 +193,52 @@ body {
   overflow-x: hidden;
 }
 
+/* Global Background Video */
+.bg-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.35) saturate(1.1);
+}
+
+.bg-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.85) 100%);
+}
+
+/* Ensure app content sits above background video */
+.app {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Remove any section backgrounds that might cause cuts */
+.services, .about, .projects, .contact-section, .footer {
+  background: transparent !important;
+}
+
+/* Ensure smooth transitions between sections */
+.services::before, .about::before, .projects::before, .contact-section::before, .footer::before {
+  display: none !important;
+}
+
 /* Modern Typography System */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-secondary);

@@ -39,10 +39,7 @@ const Footer = () => {
             <div className="footer-links">
               <Link to="/services" className="footer-link">Website Development</Link>
               <Link to="/services" className="footer-link">Software Development</Link>
-              <Link to="/services" className="footer-link">AI Integration</Link>
-              <Link to="/services" className="footer-link">Technical Support</Link>
-              <Link to="/services" className="footer-link">Hosting and Deployment</Link>
-              <Link to="/services" className="footer-link">Maintenance and Updates</Link>
+              <Link to="/services" className="footer-link">Consulting</Link>
             </div>
           </div>
         </div>

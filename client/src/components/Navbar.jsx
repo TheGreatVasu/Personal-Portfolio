@@ -69,13 +69,7 @@ const Navbar = () => {
             >
               Services
             </Link>
-            <Link 
-              to="/tech-stack" 
-              className={`nav-link ${location.pathname === '/tech-stack' ? 'active' : ''}`}
-              onClick={closeMobileMenu}
-            >
-              Tech Stack
-            </Link>
+            
             <Link 
               to="/projects" 
               className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}
@@ -83,20 +77,8 @@ const Navbar = () => {
             >
               Projects
             </Link>
-            <Link 
-              to="/upcoming" 
-              className={`nav-link ${location.pathname === '/upcoming' ? 'active' : ''}`}
-              onClick={closeMobileMenu}
-            >
-              Upcoming
-            </Link>
-            <Link 
-              to="/subscription" 
-              className={`nav-link ${location.pathname === '/subscription' ? 'active' : ''}`}
-              onClick={closeMobileMenu}
-            >
-              Subscription
-            </Link>
+            {/* Removed upcoming link */}
+            
             <Link 
               to="/contact" 
               className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}

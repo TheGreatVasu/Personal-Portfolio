@@ -17,12 +17,6 @@ const ProjectsPage = () => {
 
   return (
     <main className="projects-page">
-      <div className="page-background">
-        <div className="noise-overlay"></div>
-        <div className="gradient-overlay"></div>
-        <div className="grid-overlay"></div>
-      </div>
-      
       <Projects />
       <Footer />
     </main>

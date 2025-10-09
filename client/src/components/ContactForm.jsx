@@ -100,9 +100,9 @@ const ContactForm = () => {
     <section className="contact-section">
       <div className="contact-container">
         <div className="contact-header">
-          <h2 className="contact-title">Let's Work Together</h2>
+          <h2 className="contact-title">Get in Touch</h2>
           <p className="contact-description">
-            Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how we can work together to bring your ideas to life.
+            Ready to build something great? Let's discuss your project and bring your vision to life with modern, scalable solutions.
           </p>
         </div>
 
