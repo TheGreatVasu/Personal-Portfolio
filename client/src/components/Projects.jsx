@@ -18,7 +18,7 @@ const Projects = () => {
       description: "A website for YD Advisory, a consulting firm, featuring smart search, Consulting Services, and seamless checkout.",
       image: "/assets/form-project.png",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com/TheGreatVasu/form-project",
+      github: "https://github.com/TheVasuRastogi/yd-advisory",
       live: "https://ydadvisory.ae/",
       category: "Web App"
     },
@@ -32,12 +32,12 @@ const Projects = () => {
       category: "E-commerce"
     },
     {
-      title: "Talent Acquisition Form",
-      description: "A TypeScript-based talent acquisition platform with advanced form handling.",
+      title: "Account Receivable Software",
+      description: "A Software for Account Receivable with advanced features.",
       image: "/assets/talent-form.png",
       technologies: ["TypeScript", "React", "Node.js", "PostgreSQL"],
-      github: "https://github.com/TheGreatVasu/talent-acquisition-form",
-      live: "https://talent-acquisition-form-8m5b.vercel.app/",
+      github: "https://github.com/TheGreatVasu/financial-mgmt-system",
+      live: "https://financial-mgmt-system-eaxt.vercel.app/",
       category: "Web App"
     },
     {
@@ -58,7 +58,33 @@ const Projects = () => {
       live: "https://rastogiassociates.com/",
       category: "Website"
     },
-   
+    {
+      title: "DGCA Examination Portal",
+      description: "A DGCA Examination Portal for the students to prepare for the examination.",
+      image: "/assets/dgca-portal.png",
+      technologies: ["React", "Node.js", "Express", "MongoDB"],
+      github: "https://github.com/TheRastogiCoders/dgca-training-portal",
+      live: "https://dgca-training-portal.vercel.app/",
+      category: "Web App"
+    },
+    {
+      title: "ONX STUDIO",
+      description: "A Studio Website for the Video Marketing Agency.",
+      image: "/assets/onx-studio.png",  
+      technologies: ["React", "Node.js", "Express", "MongoDB"],
+      github: "https://greatabhi4007.wixstudio.com/mysite-1",
+      live: "https://onx-studio.com/",
+      category: "Web App"
+    },
+    {
+      title: "A Professional Beauty Website",
+      description: "A Professional Beauty Website for the beauty company.",
+      image: "/assets/beauty-website.png",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      github: "https://thenote.earth/",
+      live: "https://thenote.earth/",
+      category: "Web App"
+    }
   ];
 
   return (

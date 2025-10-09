@@ -10,7 +10,7 @@ const Services = () => {
       description: "High-performance websites tailored to your brand with modern UX and SEO.",
       features: [
         "Landing pages & marketing sites",
-        "E‑commerce stores (Stripe/Razorpay)",
+        "E-commerce stores (Stripe/Razorpay)",
         "Portfolios, blogs & CMS (Headless)",
         "Admin dashboards & internal tools",
         "Responsive, accessible, SEO‑friendly",
@@ -29,7 +29,9 @@ const Services = () => {
         "Relational/NoSQL database design",
         "Third‑party integrations (payments, email, storage)",
         "Automated testing & CI/CD",
-        "Cloud deployments & monitoring"
+        "Cloud deployments & monitoring",
+        "Performance Optimization & Scalability",
+        "DevOps & Infrastructure Automation"
       ]
     },
     {
@@ -42,7 +44,9 @@ const Services = () => {
         "MVP scoping & cost optimization",
         "Team mentoring & best practices",
         "Hiring support & review",
-        "Project rescue & performance tuning"
+        "Project rescue & performance tuning",
+        "Scaling & Infrastructure Optimization",
+        "Quality Assurance & Performance Testing"
       ]
     }
   ];

@@ -37,8 +37,8 @@ const About = () => {
   };
 
   const stats = [
-    { number: "10+", label: "Projects Completed" },
-    { number: "5+", label: "Happy Clients" },
+    { number: "25+", label: "Projects Completed" },
+    { number: "20+", label: "Happy Clients" },
     { number: "2+", label: "Years Experience" },
     { number: "10+", label: "Technologies Mastered" }
   ];
@@ -81,11 +81,9 @@ const About = () => {
       <div className="about-container">
         <div className="about-header" data-aos="fade-up">
           <h2 className="section-title">About Me</h2>
-          <h3 className="section-subtitle">Building reliable systems with a user‑first mindset</h3>
+          <h3 className="section-subtitle">Building reliable systems with a user-first mindset</h3>
           <p className="bio">
-            I’m a full‑stack engineer focused on crafting fast, accessible products. I combine modern
-            frontend with solid backend architectures to ship features confidently and keep them
-            maintainable over time.
+           A Full Stack Developer with a passion for building scalable and efficient web applications. I have a strong foundation in both frontend and backend development, and I am always looking for new challenges and opportunities to grow.
           </p>
         </div>
 
