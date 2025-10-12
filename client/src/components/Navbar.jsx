@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaDownload } from 'react-icons/fa';
+import { FaDownload, FaFilePdf } from 'react-icons/fa';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -29,6 +29,17 @@ const Navbar = () => {
     const link = document.createElement('a');
     link.href = '/assets/Vasu_Rastogi_Resume.pdf';
     link.download = 'Vasu_Rastogi_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    closeMobileMenu();
+  };
+
+  const handleCompanyProfile = () => {
+    const link = document.createElement('a');
+    link.href = '/assets/Company_Profile.pdf';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -86,9 +97,28 @@ const Navbar = () => {
             >
               Contact
             </Link>
+            
+            {/* Resume button for mobile menu */}
+            <button 
+              className="mobile-resume-btn" 
+              onClick={handleDownload}
+              aria-label="Download Resume"
+            >
+              <FaDownload className="download-icon" />
+              <span>Resume</span>
+            </button>
           </div>
 
           <div className="navbar-actions">
+            <button 
+              className="company-profile-btn" 
+              onClick={handleCompanyProfile}
+              aria-label="View Company Profile"
+            >
+              <FaFilePdf className="pdf-icon" />
+              <span>Company Profile</span>
+            </button>
+
             <button 
               className="resume-download-btn" 
               onClick={handleDownload}
