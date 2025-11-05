@@ -2,13 +2,15 @@ const transporter = require('../config/emailService');
 
 const sendContactEmail = async (req, res) => {
   try {
+    const emailService = (process.env.EMAIL_SERVICE || 'gmail').toLowerCase();
+    const fromEmail = process.env.FROM_EMAIL || process.env.EMAIL_USER;
     console.log('Contact form submission received:', req.body);
     const { name, email, phone, date, bookingType, message } = req.body;
 
     // Email to the website owner
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.CONTACT_EMAIL || process.env.EMAIL_USER,
+      from: fromEmail,
+      to: process.env.CONTACT_EMAIL || fromEmail,
       subject: `New Contact Form Message from ${name} - ${bookingType || 'General Inquiry'}`,
       html: `
         <h3>New Contact Form Submission</h3>
@@ -24,13 +26,23 @@ const sendContactEmail = async (req, res) => {
       `
     };
 
-    // Verify email configuration
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.error('Email configuration missing');
-      return res.status(500).json({ 
-        success: false, 
-        error: 'Email service not configured. Please contact the administrator.' 
-      });
+    // Verify email configuration depending on provider
+    if (emailService === 'sendgrid') {
+      if (!process.env.SENDGRID_API_KEY || !fromEmail) {
+        console.error('SendGrid configuration missing');
+        return res.status(500).json({
+          success: false,
+          error: 'Email service (SendGrid) not configured. Please contact the administrator.'
+        });
+      }
+    } else {
+      if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+        console.error('Email configuration missing');
+        return res.status(500).json({
+          success: false,
+          error: 'Email service not configured. Please contact the administrator.'
+        });
+      }
     }
 
     // Send email
@@ -40,7 +52,7 @@ const sendContactEmail = async (req, res) => {
 
     // Auto-reply to the sender
     const autoReplyOptions = {
-      from: process.env.EMAIL_USER,
+      from: fromEmail,
       to: email,
       subject: 'Thank you for contacting Vasu Rastogi - CEO @Rastogi Coders',
       html: `

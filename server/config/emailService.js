@@ -81,22 +81,32 @@ const createEmailTransporter = () => {
   return nodemailer.createTransport(transporterConfig);
 };
 
-// Create and verify transporter
+// Create and optionally verify transporter
 const transporter = createEmailTransporter();
 
-// Verify connection configuration
-if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+// Log selected service
+const currentService = (process.env.EMAIL_SERVICE || 'gmail').toLowerCase();
+console.log(`Email service selected: ${currentService}`);
+
+// Only verify if explicitly enabled
+const enableVerify = process.env.SMTP_VERIFY === 'true';
+const canVerify =
+  (currentService === 'sendgrid' && !!process.env.SENDGRID_API_KEY) ||
+  (!!process.env.EMAIL_USER && !!process.env.EMAIL_PASS);
+
+if (enableVerify && canVerify) {
   transporter.verify((error, success) => {
     if (error) {
       console.error('Email configuration error:', error);
       console.error('Please check your email service configuration and credentials');
     } else {
       console.log('Email server is ready to take our messages');
-      console.log(`Using email service: ${process.env.EMAIL_SERVICE || 'gmail'}`);
     }
   });
+} else if (!enableVerify) {
+  console.log('SMTP verification disabled (set SMTP_VERIFY=true to enable).');
 } else {
-  console.warn('Email credentials not set. Skipping SMTP verification. Set EMAIL_USER and EMAIL_PASS to enable email sending.');
+  console.warn('Email credentials not set or incomplete. Skipping SMTP verification.');
 }
 
 module.exports = transporter;

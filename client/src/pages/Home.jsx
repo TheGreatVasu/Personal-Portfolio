@@ -11,13 +11,27 @@ import Footer from '../components/Footer';
 
 const Home = () => {
   useEffect(() => {
+    // Initialize AOS with settings that prevent conflicts
     AOS.init({
       duration: 1000,
       once: true,
       easing: 'ease',
       offset: 100,
-      delay: 100
+      delay: 100,
+      disable: false,
+      // Prevent AOS from affecting hero section
+      useClassNames: false,
+      disableMutationObserver: false
     });
+    
+    // Refresh AOS after a short delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      AOS.refresh();
+    }, 200);
+    
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   return (

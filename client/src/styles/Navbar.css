@@ -169,6 +169,10 @@
   transform: translateY(2px);
 }
 
+.mobile-resume-btn {
+  display: none;
+}
+
 .language-selector {
   position: relative;
 }

@@ -1,56 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import '../styles/Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-content">
-          <div className="footer-brand">
-            <h3 className="footer-logo">Vasu Rastogi</h3>
-            <p className="footer-description">
-              Passionate Full Stack Developer specializing in creating beautiful, functional, 
-              and user-friendly applications. Let's turn your ideas into reality.
-            </p>
-            <div className="footer-social">
-              <a href="https://github.com/TheGreatVasu" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FaGithub />
-              </a>
-              <a href="https://www.linkedin.com/in/vasurastogi/" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FaLinkedin />
-              </a>
-            </div>
-          </div>
+    <div className="footer-wrapper">
+      {/* Footer card */}
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-card">
+            <div className="footer-card-inner">
+              <div className="footer-identity">
+                <h3 className="footer-name">Vasu Rastogi</h3>
+                <p className="footer-tagline">Building premium, custom digital products — end‑to‑end.</p>
+              </div>
 
-          <div className="footer-section">
-            <h4 className="footer-title">Quick Links</h4>
-            <div className="footer-links">
-              <Link to="/" className="footer-link">Home</Link>
-              <Link to="/about" className="footer-link">About</Link>
-              <Link to="/services" className="footer-link">Services</Link>
-              <Link to="/contact" className="footer-link">Contact</Link>
-            </div>
-          </div>
+              <div className="footer-socials">
+                <a href="https://github.com/TheGreatVasu" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="footer-icon">
+                  <FaGithub />
+                </a>
+                <a href="https://linkedin.com/in/vasurastogi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-icon">
+                  <FaLinkedinIn />
+                </a>
+              </div>
 
-          <div className="footer-section">
-            <h4 className="footer-title">Services</h4>
-            <div className="footer-links">
-              <Link to="/services" className="footer-link">Website Development</Link>
-              <Link to="/services" className="footer-link">Software Development</Link>
-              <Link to="/services" className="footer-link">Consulting</Link>
+              <div className="footer-divider"></div>
+
+              <div className="footer-copy">© {new Date().getFullYear()} Vasu Rastogi — All rights reserved.</div>
             </div>
           </div>
         </div>
-
-        <div className="footer-bottom">
-          <p className="footer-copyright">
-            © {new Date().getFullYear()} Vasu Rastogi | All rights reserved
-          </p>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 };
 

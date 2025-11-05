@@ -1,3 +1,74 @@
+
+/* Pre-footer premium banner */
+.prefooter {
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+}
+
+.prefooter-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2.5rem 1rem 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+}
+
+.prefooter-inner.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prefooter-box {
+  display: inline-block;
+  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(0.75rem, 2vw, 1.5rem);
+  border-radius: 20px;
+  background: transparent; /* make banner background transparent */
+  border: none; /* remove outline */
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.prefooter-title {
+  text-transform: uppercase;
+  font-weight: 900;
+  /* Modern condensed/wide hybrid look with robust fallbacks */
+  font-family: "Inter Tight", "Space Grotesk", "Sora", "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-stretch: 105%;
+  line-height: 1.1;
+  /* Responsive tracking */
+  letter-spacing: clamp(0.12em, 0.8vw, 0.22em);
+  color: #fff;
+  font-size: clamp(1.75rem, 5vw, 4.25rem);
+  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+  margin-inline: auto;
+  max-width: min(92vw, 1200px);
+}
+
+/* Typewriter caret */
+.typewriter {
+  position: relative;
+  white-space: nowrap;
+}
+
+.typewriter::after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  width: 1px;
+  height: 0.85em;
+  margin-left: 4px;
+  background: #fff;
+  animation: caretBlink 900ms steps(1, end) infinite;
+  vertical-align: -0.05em;
+}
+
+@keyframes caretBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
 .footer {
   position: relative;
   background: transparent;
@@ -16,18 +87,78 @@
   z-index: 2;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 2.5rem;
-  margin-bottom: 1.5rem;
+/* New centered footer card */
+.footer-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 
-.footer-brand {
+.footer-card-inner {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 1rem;
+  padding: 2.5rem 1.5rem;
 }
+
+.footer-identity { margin-bottom: 0.5rem; }
+
+.footer-name {
+  color: var(--color-text);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.footer-tagline {
+  color: var(--color-text-light);
+  font-size: clamp(0.95rem, 1.6vw, 1.125rem);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all var(--transition-normal);
+}
+
+.footer-icon:hover {
+  background: rgba(255, 255, 255, 0.92);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.footer-divider {
+  height: 1px;
+  width: 100%;
+  max-width: 680px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0.5rem 0 0.25rem;
+}
+
+.footer-copy {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* legacy grid removed */
 
 .footer-logo {
   font-size: 1.5rem;
@@ -128,50 +259,14 @@
   opacity: 0.7;
 }
 
-@media (max-width: 992px) {
-  .footer-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-}
+@media (max-width: 992px) { }
 
 @media (max-width: 768px) {
   .footer {
     padding: 2rem 0 1.25rem;
   }
 
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .footer-brand {
-    text-align: center;
-  }
-
-  .footer-description {
-    margin: 0 auto;
-  }
-
-  .footer-social {
-    justify-content: center;
-  }
-
-  .footer-section {
-    text-align: center;
-  }
-
-  .footer-links {
-    align-items: center;
-  }
-
-  .footer-link {
-    justify-content: center;
-  }
+  .footer-card-inner { padding: 2rem 1.25rem; }
 }
 
 @media (max-width: 480px) {
