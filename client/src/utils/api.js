@@ -1,5 +1,3 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://personal-portfolio-3w8q.onrender.com/api';
-
 // Web3Forms configuration for contact form submissions
 const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
 const WEB3FORMS_ACCESS_KEY = '81d4d30c-af6b-4151-838e-a39c001d17bf';

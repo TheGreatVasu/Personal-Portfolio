@@ -63,8 +63,8 @@ const ContactForm = () => {
     }
 
     // Validate phone format (basic)
-    const phoneRegex = /^[\+]?[1-9][\d\s\-\(\)]{7,15}$/;
-    if (!phoneRegex.test(formData.phone.replace(/[\s\-\(\)]/g, ''))) {
+    const phoneRegex = /^[+]?[1-9][\d\s\-()]{7,15}$/;
+    if (!phoneRegex.test(formData.phone.replace(/[\s\-()]/g, ''))) {
       setStatus({
         submitting: false,
         success: null,
