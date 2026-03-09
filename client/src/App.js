@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AboutPage from './pages/About';
-import ServicesPage from './pages/Services';
-import ServiceDetail from './pages/ServiceDetail';
 import ProjectsPage from './pages/Projects';
 import ContactPage from './pages/Contact';
 // Removed UpcomingPage import
@@ -33,8 +31,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:serviceId" element={<ServiceDetail />} />
           <Route path="/projects" element={<ProjectsPage />} />
           {/* Removed upcoming route */}
           

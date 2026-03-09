@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaDownload, FaFilePdf } from 'react-icons/fa';
+import { FaDownload } from 'react-icons/fa';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -35,17 +35,6 @@ const Navbar = () => {
     closeMobileMenu();
   };
 
-  const handleCompanyProfile = () => {
-    const link = document.createElement('a');
-    link.href = '/assets/Company_Profile.pdf';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    closeMobileMenu();
-  };
-
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="navbar-container">
@@ -74,13 +63,19 @@ const Navbar = () => {
               About
             </Link>
             <Link 
-              to="/services" 
-              className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+              to={location.pathname === '/about' ? '/about#education' : '/#education'}
+              className={`nav-link ${location.hash === '#education' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
-              Services
+              Education
             </Link>
-            
+            <Link 
+              to={location.pathname === '/about' ? '/about#certificates' : '/#certificates'}
+              className={`nav-link ${location.hash === '#certificates' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Certificates
+            </Link>
             <Link 
               to="/projects" 
               className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}
@@ -110,15 +105,6 @@ const Navbar = () => {
           </div>
 
           <div className="navbar-actions">
-            <button 
-              className="company-profile-btn" 
-              onClick={handleCompanyProfile}
-              aria-label="View Company Profile"
-            >
-              <FaFilePdf className="pdf-icon" />
-              <span>Company Profile</span>
-            </button>
-
             <button 
               className="resume-download-btn" 
               onClick={handleDownload}

@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Hero from '../components/Hero';
-import Services from '../components/Services';
 import About from '../components/About';
+import Skills from '../components/Skills';
+import Education from '../components/Education';
+import Certificates from '../components/Certificates';
 import Projects from '../components/Projects';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
@@ -43,8 +45,10 @@ const Home = () => {
       </div>
       
       <Hero />
-      <Services />
       <About />
+      <Skills />
+      <Education />
+      <Certificates />
       <Projects />
       {/* Removed UpcomingProject component */}
       <ContactForm />
