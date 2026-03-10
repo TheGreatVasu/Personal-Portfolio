@@ -63,7 +63,7 @@ const Hero = () => {
         <div className="hero-content-wrapper">
           <div className="hero-text-content">
             <h1 className="hero-title">Vasu Rastogi</h1>
-            <p className="hero-subtitle">Software Engineer • CEO @Rastogi Coders</p>
+            <p className="hero-subtitle">Software Developer | Building Scalable Tech Products for Businesses & Startups</p>
 
             <div className="hero-actions">
               <Link to="/projects" className="btn-primary">Explore Work</Link>

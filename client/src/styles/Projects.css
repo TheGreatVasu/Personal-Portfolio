@@ -74,20 +74,20 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff !important;
+  -webkit-text-fill-color: unset;
+  background: none;
 }
 
 .section-subtitle {
   font-size: 1.5rem;
-  color: var(--color-text);
+  color: #ffffff !important;
   margin-bottom: 1.5rem;
 }
 
 .section-description {
   font-size: 1.1rem;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.8) !important;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.8;
@@ -126,16 +126,16 @@
 
 .project-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   opacity: 0;
   animation: appearFromBottom 0.8s ease-out forwards,
              floatAnimation 4s ease-in-out infinite;
   animation-delay: var(--appear-delay), var(--float-delay);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255,255,255,0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 /* Sequential appearance delays */
@@ -178,9 +178,10 @@
 
 .project-card:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.12);
   animation-play-state: paused;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .project-image {
@@ -234,15 +235,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  color: white;
+  color: #fff !important;
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
 
 .project-link:hover {
-  background: var(--white-shade-3);
+  background: rgba(255, 255, 255, 0.95);
+  color: #111827 !important;
   transform: translateY(-2px);
 }
 
@@ -253,7 +255,7 @@
 
 .project-title {
   font-size: 1.25rem;
-  color: var(--color-text);
+  color: #ffffff !important;
   margin-bottom: 0.75rem;
   position: relative;
 }
@@ -265,7 +267,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--white-shade-3);
+  background: rgba(255, 255, 255, 0.5);
   transition: width 0.3s ease;
 }
 
@@ -275,7 +277,7 @@
 
 .project-description {
   font-size: 0.95rem;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.85) !important;
   margin-bottom: 1rem;
   line-height: 1.6;
 }
@@ -289,28 +291,31 @@
 
 .tech-tag {
   font-size: 0.85rem;
-  color: var(--color-text-light);
-  background: rgba(var(--color-primary-rgb), 0.05);
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.04);
   padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  border: 1px solid rgba(var(--color-primary-rgb), 0.1);
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
 }
 
 .tech-tag:hover {
-  background: rgba(var(--color-primary-rgb), 0.1);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .project-category {
   font-size: 0.85rem;
-  color: var(--color-text-light);
-  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.04);
   padding: 0.25rem 0.75rem;
-  border-radius: 12px;
+  border-radius: 8px;
   display: inline-block;
-  backdrop-filter: blur(4px);
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
 }
 
 .project-hover-effect {

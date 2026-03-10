@@ -3,10 +3,10 @@ import '../styles/About.css';
 
 const About = () => {
   const stats = [
-    { number: "25+", label: "Projects Completed" },
-    { number: "20+", label: "Happy Clients" },
+    { number: "12+", label: "Projects Completed" },
+    { number: "8+", label: "Happy Clients" },
     { number: "2+", label: "Years Experience" },
-    { number: "10+", label: "Technologies Mastered" }
+    { number: "5+", label: "Technologies Mastered" }
   ];
 
   const timeline = [
@@ -14,31 +14,36 @@ const About = () => {
       year: "2023 - Present",
       role: "Bachelor of Technology in Computer Science and Engineering",
       company: "Lovely Professional University",
-      description: "Pursuing B.Tech in Computer Science and Engineering the Lovely Professional University, Punjab, India."
+      description:
+        "Pursuing B.Tech in Computer Science and Engineering at Lovely Professional University, Punjab. Building strong foundations in software development, data structures, and system design."
     },
     {
-      year: "2024 - Present",
-      role: "Full Stack Developer",
-      company: "Rastogi & Associates",
-      description: "Worked on Full Stack Web Development Project for a client.",
+      year: "Apr 2025 - Aug 2025",
+      role: "Freelance Full Stack Developer",
+      company: "DataBot-Labs",
+      description:
+        "Developed a responsive eCommerce platform using React.js, Node.js, and MongoDB with secure backend APIs and optimized user workflows."
     },
     {
-      year: "2025 - Present",
-      role: "Full Stack Engineer",
-      company: "Databot-labs",
-      description: "Working with a Brand to develop their visibile presence on the web."
+      year: "Jun 2025 - Present",
+      role: "Problem Solving & DSA",
+      company: "LeetCode",
+      description:
+        "Solved 100+ coding problems to strengthen algorithmic thinking, data structures knowledge, and problem-solving skills."
     },
     {
-      year: "2023 - Present",
-      role: "Self-Employed ",
-      company: "Rastogi Coders",
-      description: "Working as a Self-Employed Full Stack Developer and solving complex problems with seamless, user-first full stack innovation end-to-end."
+      year: "Sep 2025 - Present",
+      role: "Backend Developer",
+      company: "Sintora Development",
+      description:
+        "Developing scalable backend APIs using Node.js and Express while implementing optimized MySQL database structures for reliable system performance."
     },
     {
-      year: "2025 - Present",
-      role: "Working With Companies as an Backend Engineer",
-      company: "Development Startup Teams",
-      description: "Working with companies to develop their scalable Software and Backend systems."
+      year: "2025",
+      role: "Project Development",
+      company: "Account Receivable Software",
+      description:
+        "Built a centralized finance management platform to automate invoices, payments, and PO tracking using React.js, Node.js, Express.js, and MySQL."
     }
   ];
 

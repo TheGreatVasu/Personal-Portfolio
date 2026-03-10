@@ -34,25 +34,16 @@ const Projects = () => {
     {
       title: "Account Receivable Software",
       description: "A Software for Account Receivable with advanced features.",
-      image: "/assets/talent-form.png",
+      image: "/assets/nbaurum.png",
       technologies: ["TypeScript", "React", "Node.js", "PostgreSQL"],
       github: "https://github.com/TheGreatVasu/financial-mgmt-system",
       live: "https://financial-mgmt-system-eaxt.vercel.app/",
       category: "Web App"
     },
     {
-      title: "Portfolio Website",
-      description: "A modern portfolio website with dark theme and multi-language support.",
-      image: "/assets/portfolio.png",
-      technologies: ["React", "Node.js", "Express", "Nodemailer"],
-      github: "https://github.com/TheGreatVasu/portfolio",
-      live: "https://personal-portfolio-virid-xi.vercel.app/",
-      category: "Website"
-    },
-    {
       title: "Business Consulting Firm Website",
       description: "A Consulting Firm Website for there Services and Projects",
-      image: "/assets/Consulting-Firm.png",
+      image: "/assets/rastogiassociates.png",
       technologies: ["React", "Node.js", "Express", "MongoDB"],
       github: "https://github.com/TheGreatVasu/Consulting-Firm",
       live: "https://rastogiassociates.com/",
@@ -67,24 +58,7 @@ const Projects = () => {
       live: "https://dgca-training-portal.vercel.app/",
       category: "Web App"
     },
-    {
-      title: "ONX STUDIO",
-      description: "A Studio Website for the Video Marketing Agency.",
-      image: "/assets/onx-studio.png",  
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
-      github: "https://greatabhi4007.wixstudio.com/mysite-1",
-      live: "https://onx-studio.com/",
-      category: "Web App"
-    },
-    {
-      title: "A Professional Beauty Website",
-      description: "A Professional Beauty Website for the beauty company.",
-      image: "/assets/beauty-website.png",
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      github: "https://thenote.earth/",
-      live: "https://thenote.earth/",
-      category: "Web App"
-    }
+    
   ];
 
   return (

@@ -34,6 +34,9 @@ const Education = () => {
     <section id="education" className="education-section">
       <div className="education-container">
         <h2 className="education-section-title">Education</h2>
+        <p className="education-headline">
+          Academic background and qualifications that shape my technical foundation and drive for continuous learning.
+        </p>
         <div className="education-list">
           {education.map((item, index) => (
             <div
