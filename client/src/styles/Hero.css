@@ -76,6 +76,14 @@
   max-width: 800px;
   margin: 0 auto;
   min-height: calc(100vh - 10rem);
+  /* Hidden before mount so AOS never processes a visible hero on first paint */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Reveal only after React has mounted — eliminates AOS double-render flash */
+.hero-center.hero-mounted {
+  opacity: 1;
 }
 
 /* Prevent duplicate elements */
@@ -236,25 +244,16 @@
   animation: none !important;
 }
 
-/* Disable AOS animations on hero elements */
-.hero .aos-ignore,
-.hero [data-aos="none"] {
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-}
-
-/* Prevent AOS from duplicating elements */
-.hero [data-aos] {
-  opacity: 1 !important;
-}
-
+/* AOS must never touch anything inside the hero */
+.hero [data-aos],
+.hero .aos-init,
 .hero .aos-animate {
   opacity: 1 !important;
   transform: none !important;
+  animation: none !important;
+  transition: none !important;
 }
 
-/* Ensure AOS doesn't create duplicate pseudo-elements */
 .hero *[data-aos]::before,
 .hero *[data-aos]::after {
   display: none !important;

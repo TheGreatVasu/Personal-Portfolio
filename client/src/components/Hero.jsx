@@ -7,18 +7,15 @@ const Hero = () => {
   const videoRef = useRef(null);
   const heroContentRef = useRef(null);
   const [muted, setMuted] = useState(true);
+  // Hide hero content until component is fully mounted to prevent AOS double-render flash
+  const [mounted, setMounted] = useState(false);
 
-  // Prevent AOS from duplicating Hero elements
   useEffect(() => {
-    // Ensure AOS doesn't interfere with Hero section
-    if (typeof window !== 'undefined' && window.AOS && heroContentRef.current) {
-      // Disable AOS on hero elements
-      const heroElements = heroContentRef.current.querySelectorAll('.hero-title, .hero-subtitle');
-      heroElements.forEach(el => {
-        el.setAttribute('data-aos', 'none');
-        el.classList.add('aos-ignore');
-      });
-    }
+    // Mark as mounted after first paint so AOS has nothing to process on initial render
+    const frame = requestAnimationFrame(() => {
+      setMounted(true);
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const toggleMute = useCallback(() => {
@@ -59,11 +56,11 @@ const Hero = () => {
       </video>
       <div className="hero-overlay"></div>
 
-      <div className="hero-center" ref={heroContentRef}>
+      <div className={`hero-center${mounted ? ' hero-mounted' : ''}`} ref={heroContentRef}>
         <div className="hero-content-wrapper">
           <div className="hero-text-content">
             <h1 className="hero-title">Vasu Rastogi</h1>
-            <p className="hero-subtitle">Software Developer | Building Scalable Tech Products for Businesses & Startups</p>
+            <p className="hero-subtitle">Software Developer | Building Scalable Tech Products for Businesses & Startups </p>
 
             <div className="hero-actions">
               <Link to="/projects" className="btn-primary">Explore Work</Link>
