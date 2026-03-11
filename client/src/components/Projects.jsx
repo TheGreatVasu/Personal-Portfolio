@@ -9,7 +9,7 @@ const Projects = () => {
       description: "A website for Databot-labs, a robotics company, featuring smart search, 3D previews, and seamless checkout.",
       image: "/assets/robotics.png",
       technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-      github: "https://github.com/TheVasuRastogi/databot-labs-share",
+      github: "https://github.com/TheGreatVasu/databot-labs-international-ecommerce-website",
       live: "https://databot-labs.com/",
       category: "Website"
     },
@@ -45,7 +45,7 @@ const Projects = () => {
       description: "A Consulting Firm Website for there Services and Projects",
       image: "/assets/rastogiassociates.png",
       technologies: ["React", "Node.js", "Express", "MongoDB"],
-      github: "https://github.com/TheGreatVasu/Consulting-Firm",
+      github: "https://github.com/TheGreatVasu/tax-consultant-website",
       live: "https://rastogiassociates.com/",
       category: "Website"
     },
