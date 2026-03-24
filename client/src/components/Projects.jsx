@@ -37,7 +37,7 @@ const Projects = () => {
       image: "/assets/nbaurum.png",
       technologies: ["TypeScript", "React", "Node.js", "PostgreSQL"],
       github: "https://github.com/TheGreatVasu/financial-mgmt-system",
-      live: "https://financial-mgmt-system-eaxt.vercel.app/",
+      live: "https://nbaurum.com",
       category: "Web App"
     },
     {
