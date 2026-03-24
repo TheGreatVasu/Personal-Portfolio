@@ -9,7 +9,7 @@ const Education = () => {
       institution: "Lovely Professional University",
       location: "Phagwara, Punjab",
       year: "Since August 2023",
-      grade: "CGPA: 6.50",
+      grade: "CGPA: 6.87",
       description: "Pursuing B.Tech in Computer Science and Engineering with focus on software development and system design."
     },
     {
