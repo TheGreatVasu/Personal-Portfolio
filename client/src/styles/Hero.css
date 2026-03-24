@@ -76,13 +76,6 @@
   max-width: 800px;
   margin: 0 auto;
   min-height: calc(100vh - 10rem);
-  /* Hidden before mount so AOS never processes a visible hero on first paint */
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-/* Reveal only after React has mounted — eliminates AOS double-render flash */
-.hero-center.hero-mounted {
   opacity: 1;
 }
 

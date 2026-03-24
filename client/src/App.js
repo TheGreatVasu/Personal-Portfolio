@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AboutPage from './pages/About';
@@ -11,6 +13,19 @@ import ScrollToTop from './components/ScrollToTop';
 import './styles/theme.css';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease',
+      offset: 100,
+      delay: 100,
+      // MutationObserver can re-trigger layouts as the tree mounts.
+      // Disabling it avoids first-load flicker in static sections like hero.
+      disableMutationObserver: true
+    });
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />

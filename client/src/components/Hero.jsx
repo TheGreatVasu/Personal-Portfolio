@@ -1,22 +1,11 @@
-import React, { useRef, useState, useCallback, useEffect } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedinIn, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import '../styles/Hero.css';
 
 const Hero = () => {
   const videoRef = useRef(null);
-  const heroContentRef = useRef(null);
   const [muted, setMuted] = useState(true);
-  // Hide hero content until component is fully mounted to prevent AOS double-render flash
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // Mark as mounted after first paint so AOS has nothing to process on initial render
-    const frame = requestAnimationFrame(() => {
-      setMounted(true);
-    });
-    return () => cancelAnimationFrame(frame);
-  }, []);
 
   const toggleMute = useCallback(() => {
     const el = videoRef.current;
@@ -56,7 +45,7 @@ const Hero = () => {
       </video>
       <div className="hero-overlay"></div>
 
-      <div className={`hero-center${mounted ? ' hero-mounted' : ''}`} ref={heroContentRef}>
+      <div className="hero-center">
         <div className="hero-content-wrapper">
           <div className="hero-text-content">
             <h1 className="hero-title">Vasu Rastogi</h1>
