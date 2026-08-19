@@ -9,7 +9,6 @@ export const site = {
   email: "vasu@rastogicodeworks.com",
   phone: "+91 88599 85607",
   companyUrl: "https://rastogicodeworks.com",
-  portrait: "/images/founder-portrait.png",
   socials: {
     linkedin: "https://www.linkedin.com/in/vasurastogi",
     github: "https://github.com/TheGreatVasu",

@@ -6,4 +6,3 @@ build
 *.log
 .DS_Store
 next-env.d.ts
-public/images/founder-original.png
