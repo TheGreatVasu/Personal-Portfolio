@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
 import { Magnetic } from "@/components/Magnetic";
 import { usePageReady } from "@/components/MotionProvider";
+import { FounderPortrait } from "@/components/FounderPortrait";
 
 function SplitWord({ text, start = 0, className = "" }: { text: string; start?: number; className?: string }) {
   const ready = usePageReady();
@@ -32,18 +33,30 @@ export function Hero() {
       <div className="pointer-events-none absolute -right-16 bottom-24 h-72 w-72 blob-alt bg-emerald-800/10 blur-2xl" />
 
       <div className="mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-start px-5 pb-10 pt-24 sm:px-6 sm:pb-12 sm:pt-28 md:px-8">
-        <div className={`flex items-center gap-3 ${ready ? "animate-[fade-up_0.7s_ease_both]" : "opacity-0"}`}>
-          <span className="pulse-dot h-2 w-2 rounded-full bg-[var(--gold)]" />
-          <p className="text-[11px] tracking-[0.22em] uppercase text-[var(--gold)] sm:text-[12px] sm:tracking-[0.32em]">
-            Available for select partnerships
-          </p>
-        </div>
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+          <div className="min-w-0 flex-1">
+            <div className={`flex items-center gap-3 ${ready ? "animate-[fade-up_0.7s_ease_both]" : "opacity-0"}`}>
+              <span className="pulse-dot h-2 w-2 rounded-full bg-[var(--gold)]" />
+              <p className="text-[11px] tracking-[0.22em] uppercase text-[var(--gold)] sm:text-[12px] sm:tracking-[0.32em]">
+                Available for select partnerships
+              </p>
+            </div>
 
-        <h1 className="mt-5 font-display text-[clamp(3.1rem,16vw,7.6rem)] leading-[0.86] tracking-tight text-[var(--ink)]">
-          <SplitWord text="Vasu" />
-          <br />
-          <SplitWord text="Rastogi" start={0.22} className="italic text-[var(--gold-2)]" />
-        </h1>
+            <h1 className="mt-5 font-display text-[clamp(3.1rem,16vw,7.6rem)] leading-[0.86] tracking-tight text-[var(--ink)]">
+              <SplitWord text="Vasu" />
+              <br />
+              <SplitWord text="Rastogi" start={0.22} className="italic text-[var(--gold-2)]" />
+            </h1>
+          </div>
+
+          <div
+            className={`relative mx-auto h-56 w-44 shrink-0 overflow-hidden portrait-frame border-[5px] border-[var(--gold)] bg-[var(--gold)] shadow-[0_24px_50px_rgba(20,36,30,0.16)] sm:h-64 sm:w-52 lg:mx-0 lg:h-72 lg:w-56 ${
+              ready ? "animate-[fade-up_0.8s_ease_0.2s_both]" : "opacity-0"
+            }`}
+          >
+            <FounderPortrait sizes="(max-width: 1024px) 208px, 224px" priority />
+          </div>
+        </div>
 
         <div
           className={`mt-7 flex flex-col gap-7 md:mt-8 md:flex-row md:items-end md:justify-between ${
