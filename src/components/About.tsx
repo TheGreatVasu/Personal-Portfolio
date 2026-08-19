@@ -12,9 +12,8 @@ export function About() {
           <Reveal>
             <div className="relative mx-auto w-[min(100%,20rem)] lg:mx-0 lg:w-[22rem]">
               <div className="pointer-events-none absolute -left-6 -top-6 h-28 w-28 blob bg-[var(--gold)]/15" />
-              <div className="relative aspect-[4/5] overflow-hidden blob-alt bg-[var(--gold)] shadow-[0_24px_60px_rgba(20,36,30,0.14)]">
+              <div className="relative aspect-[4/5] overflow-hidden portrait-frame border-[6px] border-[var(--gold)] bg-[var(--gold)] shadow-[0_24px_60px_rgba(20,36,30,0.14)]">
                 <FounderPortrait sizes="(max-width: 1024px) 80vw, 352px" />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--gold)]/25 via-transparent to-black/10" />
               </div>
               <div className="absolute -bottom-4 -right-2 rounded-full bg-[var(--gold)] px-4 py-2 text-[11px] tracking-[0.16em] uppercase text-[var(--bg)] sm:-right-6">
                 {site.role}

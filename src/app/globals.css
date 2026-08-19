@@ -63,6 +63,10 @@ body {
   border-radius: 64% 36% 38% 62% / 42% 58% 42% 58%;
 }
 
+.portrait-frame {
+  border-radius: 48% 52% 45% 55% / 40% 38% 62% 60%;
+}
+
 .soft-panel {
   background: color-mix(in srgb, var(--bg-2) 88%, white);
   box-shadow: 0 18px 50px rgba(20, 36, 30, 0.05);

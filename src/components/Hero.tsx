@@ -32,8 +32,8 @@ export function Hero() {
       <div className="pointer-events-none absolute -left-24 top-16 h-64 w-64 blob bg-[var(--gold)]/10 blur-2xl sm:h-80 sm:w-80" />
       <div className="pointer-events-none absolute -right-16 bottom-24 h-72 w-72 blob-alt bg-emerald-800/10 blur-2xl" />
 
-      <div className="mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-10 pt-28 sm:px-6 sm:pb-14 md:px-8">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div className="mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-start px-5 pb-10 pt-24 sm:px-6 sm:pb-12 sm:pt-28 md:px-8 md:pt-28">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           <div className="min-w-0 flex-1">
             <div className={`flex items-center gap-3 ${ready ? "animate-[fade-up_0.7s_ease_both]" : "opacity-0"}`}>
               <span className="pulse-dot h-2 w-2 rounded-full bg-[var(--gold)]" />
@@ -50,11 +50,11 @@ export function Hero() {
           </div>
 
           <div
-            className={`relative mx-auto h-44 w-36 shrink-0 overflow-hidden blob-alt bg-[var(--gold)] shadow-[0_24px_50px_rgba(20,36,30,0.16)] sm:h-52 sm:w-40 lg:mx-0 lg:h-64 lg:w-52 ${
+            className={`relative mx-auto h-56 w-44 shrink-0 overflow-hidden portrait-frame border-[5px] border-[var(--gold)] bg-[var(--gold)] shadow-[0_24px_50px_rgba(20,36,30,0.16)] sm:h-64 sm:w-52 lg:mx-0 lg:h-80 lg:w-64 ${
               ready ? "animate-[fade-up_0.8s_ease_0.2s_both]" : "opacity-0"
             }`}
           >
-            <FounderPortrait sizes="(max-width: 1024px) 160px, 208px" priority focus="avatar" />
+            <FounderPortrait sizes="(max-width: 1024px) 208px, 256px" priority />
           </div>
         </div>
 
